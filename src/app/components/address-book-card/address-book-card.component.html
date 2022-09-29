@@ -1,0 +1,14 @@
+<div class="address-book-card" [@load500ms] [@leave500ms]>
+    <mat-card>
+        <mat-card-title>{{selectedContact?.name?.first}} {{selectedContact?.name?.last}}</mat-card-title>
+        <div class="address-book-card__phone-section">
+            <span class="cdk-visually-hidden">
+                Dial {{selectedContact?.name?.first}} {{selectedContact?.name?.last}} at {{selectedContact?.phone}}
+            </span>
+            <mat-card-title>{{selectedContact?.phone}}</mat-card-title>
+        </div>
+        <mat-card-actions align="end">
+            <button mat-button (click)="hideContactDetails()" tabindex="0">Back to list</button>
+        </mat-card-actions>
+    </mat-card> 
+</div>

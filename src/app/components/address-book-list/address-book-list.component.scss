@@ -1,0 +1,82 @@
+.address-book-list {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    padding: 20px 10px 20px 101px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: "Abril Fatface";
+    color: floralwhite;
+    background-color: cadetblue;
+    width: 60%;
+    transition: height .3s;
+
+    &--background-a {
+        background-color: pink;
+        top: 57%;
+        left: 57%;
+        height: 60%;
+        z-index: -1;
+    }
+
+    &--background-b {
+        background-color: floralwhite;
+        top: 43%;
+        left: 43%;
+        height: 60%;
+        z-index: -1;
+    }
+
+    table {
+        border-spacing: 1.5em;
+        border-collapse: collapse;
+        font-family: "Cutive Mono";
+        width:100%;
+    }
+
+    &--table-head {
+        padding:10px;
+        text-align: left;
+        border-bottom: 1px solid floralwhite;
+        font-weight: 500;
+
+        & >th {
+            padding: 7px 0px;
+        }
+
+    }
+
+    &--row {
+        padding: 10px;
+        transition: background-color .5s ease;
+
+        &>td {
+            padding: 10px 0px;
+        }
+
+        &:hover {
+            background-color: darkcyan;
+            cursor: pointer;
+
+            &>td {
+                background-color: transparent; /* or #000 */
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .address-book-list {
+        width: 70%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .address-book-list {
+        width: 90%;
+        padding: 20px;
+    }
+}

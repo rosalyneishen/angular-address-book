@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+    font-family: "Cutive Mono";
+    src: local("Cutive Mono"), url(./assets/fonts/Cutive_Mono/CutiveMono-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Abril Fatface";
+    src: local("Abril Fatface"), url(./assets/fonts/AbrilFatface/AbrilFatface-Regular.ttf) format("truetype");
+}

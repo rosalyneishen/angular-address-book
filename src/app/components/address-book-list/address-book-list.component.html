@@ -1,0 +1,41 @@
+<div
+    class="address-book-list" 
+    *ngIf="!selectedContact;else contactCard" 
+    [@leave500ms]
+    [@loadList500ms]
+    role="group"
+>
+    <h1>Angular Address Book</h1>
+    <div class="address-book-list__list">
+        <table>  
+            <thead class="address-book-list--table-head">  
+                <tr>
+                    <th>First Name</th>  
+                    <th>Last Name</th>  
+                    <th>Phone</th>  
+                </tr>
+            </thead>
+            <tbody>  
+            <tr
+                class="address-book-list--row" 
+                *ngFor="let contact of contacts" 
+                (click)="selectContact(contact)"
+                tabindex="0"
+            >
+                <td>{{ contact.name.first }}</td>  
+                <td>{{ contact.name.last }}</td>  
+                <td>{{ contact.phone }}</td>  
+            </tr>  
+            </tbody>  
+        </table>
+    </div>
+</div>
+<ng-template #contactCard>
+    <app-address-book-card 
+        [selectedContact]="selectedContact" 
+        (selectedContactChange)="getSelectedContactChange($event)"
+    ></app-address-book-card>
+</ng-template>
+<div class="address-book-list address-book-list--background-a" role="none"></div>
+<div class="address-book-list address-book-list--background-b" role="none"></div>
+<mat-progress-bar *ngIf="!contacts.length" mode="indeterminate" role="progressbar"></mat-progress-bar>
